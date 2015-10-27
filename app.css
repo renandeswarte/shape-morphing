@@ -1,0 +1,210 @@
+/* line 1, app.scss */
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Helvetica', Verdana, Arial;
+  font-size: 12px;
+}
+
+/* line 8, app.scss */
+#container {
+  width: 100%;
+  height: 500px;
+  -webkit-perspective: 800;
+  -webkit-perspective-origin: 50% 225px;
+  perspective: 800;
+  perspective-origin: 50% 225px;
+  -moz-perspective: 800;
+  -moz-perspective-origin: 50% 225px;
+}
+
+/* line 19, app.scss */
+.nav {
+  text-align: center;
+  margin: 0 auto;
+  padding: 5px 20px;
+}
+/* line 23, app.scss */
+.nav .control {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+/* line 26, app.scss */
+.nav .control button, .nav .control button:focus {
+  background-color: #EEE;
+  color: #000;
+  outline: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  border: none;
+  margin: 0px 10px;
+}
+
+/* line 38, app.scss */
+#scene {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform 2s;
+  transition: transform 2s;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 46, app.scss */
+#scene #shape {
+  position: relative;
+  top: 50px;
+  margin: 0 auto;
+  height: 200px;
+  width: 200px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+/* line 55, app.scss */
+#scene #shape .face {
+  position: absolute;
+  height: 200px;
+  width: 200px;
+  border: 1px solid white;
+  -webkit-border-radius: 0px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: Times, serif;
+  font-size: 150px;
+  line-height: 200px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.6);
+  -webkit-transition: -webkit-transform 2s, opacity 2s,border-radius 2s,width 2s,height 2s,font-size 2s, color 2s, background 2s,border-color 2s,border-width 2s,border-style 2s;
+  -webkit-backface-visibility: hidden;
+  transition: transform 2s, opacity 2s,border-radius 2s,width 2s,height 2s,font-size 2s, color 2s, background 2s,border-color 2s,border-width 2s,border-style 2s;
+  backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+}
+/* line 76, app.scss */
+#scene #shape.backfaces .face {
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+  -moz-backface-visibility: visible;
+}
+
+/* line 86, app.scss */
+#scene #shape.spin {
+  -webkit-animation: spin 10s infinite linear;
+  animation: spin 10s infinite linear;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+/* ---------- Cube ------------- */
+/* line 110, app.scss */
+#scene .cube {
+  opacity: 0.5;
+}
+/* line 112, app.scss */
+#scene .cube .one {
+  -webkit-transform: scale3d(1, 1, 1) rotateX(90deg) translateZ(100px);
+  transform: scale3d(1, 1, 1) rotateX(90deg) translateZ(100px);
+}
+/* line 116, app.scss */
+#scene .cube .two {
+  -webkit-transform: scale3d(1, 1, 1) translateZ(100px);
+  transform: scale3d(1, 1, 1) translateZ(100px);
+}
+/* line 120, app.scss */
+#scene .cube .three {
+  -webkit-transform: scale3d(1, 1, 1) rotateY(90deg) translateZ(100px);
+  transform: scale3d(1, 1, 1) rotateY(90deg) translateZ(100px);
+}
+/* line 124, app.scss */
+#scene .cube .four {
+  -webkit-transform: scale3d(1, 1, 1) rotateY(180deg) translateZ(100px);
+  transform: scale3d(1, 1, 1) rotateY(180deg) translateZ(100px);
+}
+/* line 128, app.scss */
+#scene .cube .five {
+  -webkit-transform: scale3d(1, 1, 1) rotateY(-90deg) translateZ(100px);
+  transform: scale3d(1, 1, 1) rotateY(-90deg) translateZ(100px);
+}
+/* line 132, app.scss */
+#scene .cube .six {
+  -webkit-transform: scale3d(1, 1, 1) rotateX(-90deg) translateZ(100px) rotate(180deg);
+  transform: scale3d(1, 1, 1) rotateX(-90deg) translateZ(100px) rotate(180deg);
+}
+
+/* ---------- Sphere ------------- */
+/* line 142, app.scss */
+#scene #shape.sphere {
+  width: 200px;
+  height: 200px;
+}
+/* line 145, app.scss */
+#scene #shape.sphere .face {
+  border-radius: 50%;
+  border-width: 3px;
+  border-style: dashed;
+  height: 200px;
+  width: 200px;
+  font-size: 124pt;
+  background: none;
+  color: transparent;
+}
+/* line 154, app.scss */
+#scene #shape.sphere .face.one {
+  -webkit-transform: scale3d(1.5, 1.5, 1.5) translateZ(0px);
+  transform: scale3d(1.5, 1.5, 1.5) translateZ(0px);
+  border-color: yellow;
+}
+/* line 159, app.scss */
+#scene #shape.sphere .face.two {
+  -webkit-transform: scale3d(1.5, 1.5, 1.5) rotateY(30deg) translateZ(0px);
+  transform: scale3d(1.5, 1.5, 1.5) rotateY(30deg) translateZ(0px);
+  border-color: green;
+}
+/* line 164, app.scss */
+#scene #shape.sphere .face.three {
+  -webkit-transform: scale3d(1.5, 1.5, 1.5) rotateY(60deg) translateZ(0px);
+  transform: scale3d(1.5, 1.5, 1.5) rotateY(60deg) translateZ(0px);
+  border-color: blue;
+}
+/* line 169, app.scss */
+#scene #shape.sphere .face.four {
+  -webkit-transform: scale3d(1.5, 1.5, 1.5) rotateY(90deg) translateZ(0px);
+  transform: scale3d(1.5, 1.5, 1.5) rotateY(90deg) translateZ(0px);
+  border-color: red;
+}
+/* line 174, app.scss */
+#scene #shape.sphere .face.five {
+  -webkit-transform: scale3d(1.5, 1.5, 1.5) rotateY(120deg) translateZ(0px);
+  transform: scale3d(1.5, 1.5, 1.5) rotateY(120deg) translateZ(0px);
+  border-color: orange;
+}
+/* line 179, app.scss */
+#scene #shape.sphere .face.six {
+  -webkit-transform: scale3d(1.5, 1.5, 1.5) rotateY(150deg) translateZ(0px);
+  transform: scale3d(1.5, 1.5, 1.5) rotateY(150deg) translateZ(0px);
+  border-color: pink;
+}
+
+/* ---------- Initial styles ------------- */
+/* line 191, app.scss */
+.init .face {
+  opacity: 0;
+}
+/* line 194, app.scss */
+.init .one {
+  opacity: 1;
+}
